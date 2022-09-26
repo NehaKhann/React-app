@@ -24,7 +24,7 @@ function Register() {
       }
     })
   }
- 
+
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
@@ -38,13 +38,11 @@ function Register() {
         <div className="input-container">
           <label>Email </label>
           <input type="email" name="email" defaultValue={inputField.email} onChange={handleChange} required />
-
         </div>
 
         <div className="input-container">
           <label>Username </label>
           <input type="text" name="uname" defaultValue={inputField.uname} onChange={handleChange} required />
-
         </div>
 
         <div className="input-container">
@@ -55,12 +53,12 @@ function Register() {
         <div className="button-container">
           <input type="submit" />
         </div>
-        
+
         <div className="bottom-container">
           <p>Already have an account? </p>
-        <button onClick={()=>navigate("/login")}> Login</button>
+          <button onClick={() => navigate("/login")}> Login</button>
         </div>
-     
+
       </form>
     </div>
   );
