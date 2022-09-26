@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
-import Home from './pages/Home/Home';
+import Login from './pages/Login/Login.js';
+import Register from './pages/Register/Register.js';
+import Home from './pages/Home/Home.js';
 import './App.css';
 
 const App = () => {

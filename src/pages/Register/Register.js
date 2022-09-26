@@ -4,32 +4,52 @@ import "./Register.css";
 
 function Register() {
   const navigate = useNavigate();
+
   // React States
+  const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [inputField, setInputField] = useState({
     email: '',
     uname: '',
     pass: ''
   })
-
-
-  const handleChange = (event) => {
-    let value = event.target.value;
-    let name = event.target.name;
-
-    setInputField((prevalue) => {
-      return {
-        ...prevalue,   // Spread Operator               
-        [name]: value
-      }
-    })
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
   }
 
+  const errors = {
+    email: "Invalid Email",
+  };
+
+    const handleChange = (event) => {
+      let value = event.target.value;
+      let name = event.target.name;
+  
+      setInputField((prevalue) => {
+        return {
+          ...prevalue,   // Spread Operator               
+          [name]: value
+        }
+      })
+    }
+  
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
-    setIsSubmitted(true);
+    if (!isValidEmail(inputField.email)) {
+      setErrorMessages({ name: "email", message: errors.email });
+    } else {
+      setIsSubmitted(true);
+    }
+
   };
+
+  // Generate JSX code for error message
+  const renderErrorMessage = (name) =>
+    name === errorMessages.name && (
+      <div className="error">{errorMessages.message}</div>
+    );
+
 
   // JSX code for signup form
   const renderForm = (
@@ -37,7 +57,8 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Email </label>
-          <input type="email" name="email" defaultValue={inputField.email} onChange={handleChange} required />
+          <input type="text" name="email" defaultValue={inputField.email} onChange={handleChange} required />
+          {renderErrorMessage("email")}
         </div>
 
         <div className="input-container">
