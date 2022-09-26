@@ -1,5 +1,5 @@
 
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import { Button } from "react-bootstrap";
@@ -34,7 +34,6 @@ function Login() {
 
     // Find user login info
     const userData = database.find((user) => user.email === email.value);
-
     // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
@@ -45,7 +44,7 @@ function Login() {
         navigate("/home");
       }
     } else {
-      // Username not found
+      // Email not found
       setErrorMessages({ name: "email", message: errors.email });
     }
   };
@@ -61,23 +60,21 @@ function Login() {
           <h1>LOGIN</h1>
         </div>
         <Form.Group className="mb-3" controlId="formBasicEmail" >
-          <Form.Label>Email address</Form.Label>
-          <Form.Control className='p-3' type="email" placeholder="Enter email" name="email" required />
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control className='p-2' type="email" placeholder="Enter email" name="email"  />
           {renderErrorMessage("email")}
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword" >
           <Form.Label>Password</Form.Label>
-          <Form.Control className='p-3' type="password" placeholder="Password" name="pass" required />
+          <Form.Control className='p-2' type="password" placeholder="Password" name="pass"  />
           {renderErrorMessage("pass")}
         </Form.Group>
 
-        <div className="col-md-12 m-3 text-center">
-          <button type="submit" onClick={handleSubmit} className="btn btn-success" >Submit</button>
+        <div className="d-grid gap-2 mb-3">
+          <button type="submit" onClick={handleSubmit} className="btn btn-success" >Login</button>
         </div>
+
         <div className="d-grid gap-2">
           <Button onClick={() => navigate("/register")} variant="primary" >
             Create an Account

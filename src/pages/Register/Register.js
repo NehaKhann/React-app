@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Register.css";
+import Form from 'react-bootstrap/Form';
+import { Button } from "react-bootstrap";
+import "./Register.css"
 
 function Register() {
   const navigate = useNavigate();
 
   // React States
   const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [inputField, setInputField] = useState({
     email: '',
     uname: '',
@@ -19,27 +20,37 @@ function Register() {
 
   const errors = {
     email: "Invalid Email",
+    uname: "Username can't be empty",
+    pass: "Password can't be empty"
   };
 
-    const handleChange = (event) => {
-      let value = event.target.value;
-      let name = event.target.name;
-  
-      setInputField((prevalue) => {
-        return {
-          ...prevalue,   // Spread Operator               
-          [name]: value
-        }
-      })
-    }
-  
+  const handleChange = (event) => {
+    let value = event.target.value;
+    let name = event.target.name;
+
+    setInputField((prevalue) => {
+      return {
+        ...prevalue,   // Spread Operator               
+        [name]: value
+      }
+    })
+  }
+
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
     if (!isValidEmail(inputField.email)) {
       setErrorMessages({ name: "email", message: errors.email });
-    } else {
-      setIsSubmitted(true);
+    }
+
+    else if (!inputField.uname) {
+      setErrorMessages({ name: "uname", message: errors.uname });
+    }
+    else if (!inputField.pass) {
+      setErrorMessages({ name: "pass", message: errors.pass });
+    }
+    else {
+      navigate("/home");
     }
 
   };
@@ -50,46 +61,39 @@ function Register() {
       <div className="error">{errorMessages.message}</div>
     );
 
-
-  // JSX code for signup form
-  const renderForm = (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Email </label>
-          <input type="text" name="email" defaultValue={inputField.email} onChange={handleChange} required />
-          {renderErrorMessage("email")}
-        </div>
-
-        <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="uname" defaultValue={inputField.uname} onChange={handleChange} required />
-        </div>
-
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" defaultValue={inputField.pass} onChange={handleChange} required />
-
-        </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
-
-        <div className="bottom-container">
-          <p>Already have an account? </p>
-          <button onClick={() => navigate("/login")}> Login</button>
-        </div>
-
-      </form>
-    </div>
-  );
-
   return (
-    <div className="register">
-      <div className="register-form">
-        <div className="title">Sign Up</div>
-        {isSubmitted ? <div>{inputField.uname} is successfully Registered </div> : renderForm}
-      </div>
+    <div className="register-form">
+      <Form >
+        <div className="col-md-12 mb-4 text-center">
+          <h1>SIGN UP</h1>
+        </div>
+        <Form.Group className="mb-3" controlId="formBasicEmail" >
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control className='p-2' type="email" placeholder="Enter email" name="email" defaultValue={inputField.email} onChange={handleChange} />
+          {renderErrorMessage("email")}
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicName" >
+          <Form.Label>Username</Form.Label>
+          <Form.Control className='p-2' type="text" placeholder="Enter Name" name="uname" defaultValue={inputField.uname} onChange={handleChange} />
+          {renderErrorMessage("uname")}
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword" >
+          <Form.Label>Password</Form.Label>
+          <Form.Control className='p-2' type="password" placeholder="Password" name="pass" defaultValue={inputField.pass} onChange={handleChange} />
+          {renderErrorMessage("pass")}
+        </Form.Group>
+
+        <div className="d-grid gap-2 mb-3">
+          <button type="submit" onClick={handleSubmit} className="btn btn-success" >Register</button>
+        </div>
+        <div className="d-grid gap-2">
+          <Button onClick={() => navigate("/login")} variant="primary" >
+            Login
+          </Button>
+        </div>
+      </Form>
     </div>
   );
 }
