@@ -1,40 +1,39 @@
-import React, { useState,useEffect } from "react";
+
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import Form from 'react-bootstrap/Form';
+import { Button } from "react-bootstrap";
+import "./Login.css"
 
 function Login() {
   const navigate = useNavigate();
   // React States
-  const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
   const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-
   // User Login info
   const database = [
     {
-      username: "user1",
+      email: "user1@gmail.com",
       password: "pass1"
     },
     {
-      username: "user2",
+      email: "user2@gmail.com",
       password: "pass2"
     }
   ];
 
   const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
+    email: "Invalid Email",
+    pass: "Invalid Password"
   };
 
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
 
-    var { uname, pass } = document.forms[0];
+    var { email, pass } = document.forms[0];
 
     // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
+    const userData = database.find((user) => user.email === email.value);
 
     // Compare user info
     if (userData) {
@@ -42,53 +41,49 @@ function Login() {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
-        setIsSubmitted(true);
         localStorage.setItem("authenticated", true);
         navigate("/home");
       }
     } else {
       // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
+      setErrorMessages({ name: "email", message: errors.email });
     }
   };
-
   // Generate JSX code for error message
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
-
-  // JSX code for login form
-  const renderForm = (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
-        </div>
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
-
-        <div className="login-bottom-container">
-        <button onClick={()=>navigate("/register")}> Create an Account</button>
-        </div>
-      </form>
-    </div>
-  );
-
   return (
-    <div className="login">
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-      </div>
+    <div className="login-form">
+      <Form >
+        <div className="col-md-12 mb-4 text-center">
+          <h1>LOGIN</h1>
+        </div>
+        <Form.Group className="mb-3" controlId="formBasicEmail" >
+          <Form.Label>Email address</Form.Label>
+          <Form.Control className='p-3' type="email" placeholder="Enter email" name="email" required />
+          {renderErrorMessage("email")}
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword" >
+          <Form.Label>Password</Form.Label>
+          <Form.Control className='p-3' type="password" placeholder="Password" name="pass" required />
+          {renderErrorMessage("pass")}
+        </Form.Group>
+
+        <div className="col-md-12 m-3 text-center">
+          <button type="submit" onClick={handleSubmit} className="btn btn-success" >Submit</button>
+        </div>
+        <div className="d-grid gap-2">
+          <Button onClick={() => navigate("/register")} variant="primary" >
+            Create an Account
+          </Button>
+        </div>
+      </Form>
     </div>
   );
 }

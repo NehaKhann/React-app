@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import CollapsibleExample from "../../components/Navbar"
 const Home = () => {
     const [authenticated, setauthenticated] = useState(null);
     const [pageLoad, setpageLoad] = useState(true)
@@ -17,6 +18,7 @@ const Home = () => {
     } else {
         return (
             <div>
+                <CollapsibleExample/>
                 <p>Welcome to your Home Screen</p>
             </div>
         );
