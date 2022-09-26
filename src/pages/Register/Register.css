@@ -47,12 +47,9 @@ input[type="submit"]:hover {
   font-size: 15px;
   cursor: pointer;
 }
-
-
-
 .register-form {
-  width: 30%;
-  height: 58%;
+  width: 40%;
+  height: 60%;
   background-color: white;
   padding: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
