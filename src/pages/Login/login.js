@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-import "./login.css";
+import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -75,6 +74,10 @@ function Login() {
         </div>
         <div className="button-container">
           <input type="submit" />
+        </div>
+
+        <div className="login-bottom-container">
+        <button onClick={()=>navigate("/register")}> Create an Account</button>
         </div>
       </form>
     </div>
