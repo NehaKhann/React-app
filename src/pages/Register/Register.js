@@ -50,7 +50,8 @@ function Register() {
       setErrorMessages({ name: "pass", message: errors.pass });
     }
     else {
-      navigate("/home");
+      alert("Successfully Registered")
+      navigate("/login");
     }
 
   };

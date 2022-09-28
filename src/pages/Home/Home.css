@@ -1,0 +1,14 @@
+.home-main-screen {
+    background-image: linear-gradient(#00d4ff, #096a79,#001e24);
+    height: 100vh
+}
+
+.home-middle-screen {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+
+}

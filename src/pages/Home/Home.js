@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import CollapsibleExample from "../../components/Navbar"
+import NavComp from "../../components/Navbar"
+import "./Home.css"
 const Home = () => {
     const [authenticated, setauthenticated] = useState(null);
     const [pageLoad, setpageLoad] = useState(true)
@@ -17,10 +18,16 @@ const Home = () => {
         return <Navigate replace to="/login" />;
     } else {
         return (
-            <div>
-                <CollapsibleExample/>
-                <p>Welcome to your Home Screen</p>
+            <div className="home-main-screen">
+                < NavComp />
+
+                <div className="home-middle-screen">
+                    <h3>Welcome User</h3>
+
+                </div>
             </div>
+
+
         );
     }
 };
