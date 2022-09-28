@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa"
 
 function NavComp() {
   const navigate = useNavigate();
@@ -34,12 +35,17 @@ function NavComp() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown> */}
+
           </Nav>
           <Nav>
+            <Nav.Link eventKey={2} href="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link eventKey={3} >
+              Cart <FaCartPlus />
+            </Nav.Link>
             <Nav.Link style={{ "cursor": "pointer" }} onClick={handleLogout}>Logout</Nav.Link>
-            {/* <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link> */}
+
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -47,4 +53,4 @@ function NavComp() {
   );
 }
 
-export default  NavComp;
+export default NavComp;

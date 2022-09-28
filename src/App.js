@@ -5,6 +5,7 @@ import Login from './pages/Login/Login.js';
 import Register from './pages/Register/Register.js';
 import Home from './pages/Home/Home.js';
 import ErrorPage from './pages/Error/404';
+import Camera from './pages/Camera/Camera';
 import './App.css';
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
           <Route exact path="/home" element={<Home/>}/>
           <Route exact path="/error" element={<ErrorPage/>}/>
          
- 
+          <Route exact path="/camera" element={<Camera/>}/>
           <Route path="*" element={<ErrorPage/>}/>
         </Routes>
      
