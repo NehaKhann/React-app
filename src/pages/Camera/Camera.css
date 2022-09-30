@@ -1,0 +1,11 @@
+.camera-main-screen{
+    height: 100vh;
+  
+
+}
+.camera-middle-screen{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

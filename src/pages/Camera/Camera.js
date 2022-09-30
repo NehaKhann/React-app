@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import NavComp from "../../components/Navbar";
+import GridComp from "../../components/Grid";
+
 
 
 import "./Camera.css"
@@ -14,7 +16,7 @@ const Camera = () => {
         }
         setpageLoad(false)
     }, []);
-
+console.log(window.innerWidth)
     if (pageLoad == false && !authenticated) {
         // Redirect
         return <Navigate replace to="/login" />;
@@ -22,8 +24,10 @@ const Camera = () => {
         return (
             <div className="camera-main-screen">
                 <NavComp />
-                <h1>Camera screen</h1>
-
+                <div className="camera-middle-screen">
+                
+                    <GridComp />
+                </div>
             </div>
 
         );
