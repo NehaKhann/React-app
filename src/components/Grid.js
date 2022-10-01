@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import WebcamCapture from "./WebCam"
-import GroupExample from "./Card"
+import CardComp from "./Card"
 
 function GridComp() {
   return (
@@ -14,7 +14,7 @@ function GridComp() {
         {/* <Col  sm={9}></Col> */}
         <Col  lg={5}>
   
-          <GroupExample/></Col>
+          <CardComp/></Col>
       </Row>
 
     </Container>

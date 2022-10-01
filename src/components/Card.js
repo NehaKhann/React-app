@@ -1,17 +1,17 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import "./WebCam.css"
 
-function GridExample() {
+function CardComp() {
   return (
-    <>
-    <h3>Cart Items</h3>
-    <Row xs={1} md={2} className="g-4 pt-3">
-     
+
+
+    <div className="scrollable-div mt-3">
+    <Row xs={1} md={2} className="g-4 ">
       {Array.from({ length: 6 }).map((_, idx) => (
         <Col>
           <Card>
-         
             <Card.Img variant="top" src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" />
             <Card.Body>
               <Card.Title>Cart Item</Card.Title>
@@ -23,8 +23,9 @@ function GridExample() {
         </Col>
       ))}
     </Row>
-    </>
+    </div>
+
   );
 }
 
-export default GridExample;
+export default CardComp;
