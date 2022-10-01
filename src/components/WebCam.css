@@ -1,7 +1,16 @@
 .scrollable-div {
-    background-color: #f1f1f1;
-    height: 400px;
-    width: 450px;
-    overflow-y: scroll;
-    text-align: justify;
+  background-color: #f1f1f1;
+  height: 55%;
+  width: 90%;
+  overflow-y: scroll;
+  text-align: justify;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1030px) {
+  .web-camera {
+    width: 500px;
+    height: 390px;
+
   }
+}

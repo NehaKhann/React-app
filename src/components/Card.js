@@ -1,14 +1,15 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import "./WebCam.css"
+import "./WebCam.css";
+import { Button } from 'react-bootstrap';
 
 function CardComp() {
   return (
 
 
     <div className="scrollable-div mt-3">
-    <Row xs={1} md={2} className="g-4 ">
+    <Row xs={1} md={2} className="g-2 ">
       {Array.from({ length: 6 }).map((_, idx) => (
         <Col>
           <Card>
@@ -23,6 +24,8 @@ function CardComp() {
         </Col>
       ))}
     </Row>
+    <Button variant="success" className='mt-3'>Checkout</Button>
+    <Button variant="success" className='mt-3'>Checkout</Button>
     </div>
 
   );
