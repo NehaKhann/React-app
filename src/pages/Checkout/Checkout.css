@@ -1,0 +1,14 @@
+.checkout-main-screen{
+    background-image: linear-gradient(#00d4ff, #096a79, #7dbbc8);
+    height: 100vh;
+   
+}
+.checkout-form{
+    margin: 30px 90px;
+
+}
+.field1{
+    display: flex;
+    flex-direction: row;
+
+}
