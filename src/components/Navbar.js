@@ -41,7 +41,7 @@ function NavComp() {
             <Nav.Link eventKey={2} href="/home">
               Home
             </Nav.Link>
-            <Nav.Link eventKey={3} >
+            <Nav.Link eventKey={3} href="/camera">
               Cart <FaCartPlus />
             </Nav.Link>
             <Nav.Link style={{ "cursor": "pointer" }} onClick={handleLogout}>Logout</Nav.Link>

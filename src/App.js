@@ -6,6 +6,7 @@ import Register from './pages/Register/Register.js';
 import Home from './pages/Home/Home.js';
 import ErrorPage from './pages/Error/404';
 import Camera from './pages/Camera/Camera';
+import Checkout from './pages/Checkout/Checkout';
 import './App.css';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/error" element={<ErrorPage/>}/>
          
           <Route exact path="/camera" element={<Camera/>}/>
+          <Route exact path="/checkout" element={<Checkout/>}/>
           <Route path="*" element={<ErrorPage/>}/>
         </Routes>
      
