@@ -1,0 +1,51 @@
+{"labels":[
+    {
+        "id":0,
+        "name":"Bake Time Marble SLice Cake",
+        "price":10,
+        "unit":1,
+        "productId":"MBCS_10"
+    },
+    {
+        "id":1,
+        "name":"Catty Chinns 20gm ",
+        "price":30,
+        "unit":1,
+        "productId":"CC20GM_30"
+    },
+    {
+        "id":2,
+        "name":"Chocolava ",
+        "price":20,
+        "unit":1,
+        "productId":"CHLVA_20"
+    },
+    {
+        "id":3,
+        "name":"Prince Chocolate Biscuit",
+        "price":50,
+        "unit":1,
+        "productId":"PCB_50"
+    },
+    {
+        "id":4,
+        "name":"Slanty Jalapeno",
+        "price":30,
+        "unit":1,
+        "productId":"SLATYJL_30"
+    },
+    {
+        "id":5,
+        "name":"Tang Orange",
+        "price":30,
+        "unit":1,
+        "productId":"TANGORG_30"
+    },
+    {
+        "id":6,
+        "name":"YUMS Fruity",
+        "price":30,
+        "unit":1,
+        "productId":"YUMS_30"
+    }
+]}

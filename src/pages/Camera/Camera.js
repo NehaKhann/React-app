@@ -16,7 +16,7 @@ const Camera = () => {
         }
         setpageLoad(false)
     }, []);
-console.log(window.innerWidth)
+    console.log(window.innerWidth)
     if (pageLoad == false && !authenticated) {
         // Redirect
         return <Navigate replace to="/login" />;
@@ -25,7 +25,7 @@ console.log(window.innerWidth)
             <div className="camera-main-screen">
                 <NavComp />
                 <div className="camera-middle-screen">
-                
+
                     <GridComp />
                 </div>
             </div>
