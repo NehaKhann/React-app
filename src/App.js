@@ -16,9 +16,10 @@ const App = () => {
           <Route exact path="/" element={<Login/>}/>
           <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/register" element={<Register/>}/>
-          <Route exact path="/home" element={<Home/>}/>
+          <Route exact path="/home" element={<Camera/>}/>
+          {/* <Route exact path="/home" element={<Home/>}/> */}
           <Route exact path="/error" element={<ErrorPage/>}/>
-          <Route exact path="/camera" element={<Camera/>}/>
+          {/* <Route exact path="/camera" element={<Camera/>}/> */}
           <Route exact path="/checkout" element={<Checkout/>}/>
           <Route path="*" element={<ErrorPage/>}/>
         </Routes>

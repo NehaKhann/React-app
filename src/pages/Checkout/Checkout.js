@@ -25,71 +25,49 @@ const Checkout = () => {
         return (
             <div className="checkout-main-screen">
                 <NavComp />
+                <div className="center">
+                    <div>
 
-                <Form className="checkout-form">
-                    <h4>Contact Information</h4>
-                    <Form.Group className="mb-3 " controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                    </Form.Group>
-                    <h4>Shipping Address</h4>
-                    <div className="field1">
-                    <Form.Group className="m-2 " controlId="formBasicPassword">
-                        <Form.Label>First Name</Form.Label>
-                        <Form.Control type="text" placeholder="First Name" />
-                    </Form.Group>
-                    <Form.Group className="m-2" controlId="formBasicPassword">
-                        <Form.Label>Last Name</Form.Label>
-                        <Form.Control type="text" placeholder="Last Name" />
-                    </Form.Group>
-                    <Form.Group className="m-2" controlId="formBasicPassword">
-                        <Form.Label>Address</Form.Label>
-                        <Form.Control type="text" placeholder="Address" />
-                        </Form.Group>
-                        <Form.Group className="m-2" controlId="formBasicPassword">
-                        <Form.Label>City</Form.Label>
-                        <Form.Control type="text" placeholder="City" />
-                    </Form.Group>
-                    <Form.Group className="m-2" controlId="formBasicPassword">
-                        <Form.Label>Phone</Form.Label>
-                        <Form.Control type="text" placeholder="Phone" />
-                    </Form.Group>
+                        <Form className="checkout-form center-form" >
+                            <h4>Contact Information</h4>
+                            <div className="field1">
+                                <Form.Group className="mb-2 " controlId="formBasicPassword">
+                                    <Form.Label>Contact Number</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter contact number" />
+                                </Form.Group>
+                                <Form.Group className="mb-2" controlId="formBasicPassword" style={{ marginLeft: 20 }}>
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" placeholder="Enter email" />
+                                </Form.Group>
+                            </div>
+                            <h4>Payment Details</h4>
+                            <div className="field1">
+                                <Form.Group className="m-2" controlId="formBasicPassword">
+                                    <Form.Label style={{ marginTop: 5 }}>Card Number</Form.Label>
+                                    <Form.Control type="text" placeholder="Card Number" />
+                                    <Form.Label style={{ marginTop: 10 }}>Expiration Month</Form.Label>
+                                    <Form.Control type="text" placeholder="Expiration Month" />
+                                </Form.Group>
+                                <Form.Group className="m-2" controlId="formBasicPassword">
+                                    <Form.Label style={{ marginTop: 5 }}>CVN</Form.Label>
+                                    <Form.Control type="text" placeholder="CVN" />
+                                    <Form.Label style={{ marginTop: 10 }}>Expiration Year</Form.Label>
+                                    <Form.Control type="text" placeholder="Expiration Year" />
+                                </Form.Group>
+                            </div>
+                            <div className="center-form-button">
+                                <Button style={{ width: 150 }} onClick={() => navigate("/home")} className="m-2" variant="light" size="md">
+                                    Back to Home
+                                </Button>
+                                <Button style={{ width: 150 }} onClick={() => navigate("/home")} className="m-2" variant="success" size="md">
+                                    Pay
+                                </Button>
+                            </div>
+
+
+                        </Form>
                     </div>
-                    <h4>Payment Details</h4>
-                    <div className="field1">
-                    <Form.Group className="m-2 " controlId="formBasicPassword">
-                        <Form.Label>Card Type</Form.Label>
-                        <Form.Control type="text" placeholder="Visa or MasterCard" />
-                    </Form.Group>
-                    <Form.Group className="m-2" controlId="formBasicPassword">
-                        <Form.Label>Card Number</Form.Label>
-                        <Form.Control type="text" placeholder="Card Number" />
-                    </Form.Group>
-                    <Form.Group className="m-2" controlId="formBasicPassword">
-                        <Form.Label>Expiration Month</Form.Label>
-                        <Form.Control type="text" placeholder="Expiration Month" />
-                        </Form.Group>
-                        <Form.Group className="m-2" controlId="formBasicPassword">
-                        <Form.Label>Expiration Year</Form.Label>
-                        <Form.Control type="text" placeholder="Expiration Year" />
-                    </Form.Group>
-                    <Form.Group className="m-2 " controlId="formBasicPassword">
-                        <Form.Label>CVN</Form.Label>
-                        <Form.Control type="text" placeholder="CVN" />
-                    </Form.Group>
-                    </div>
-
-
-               
-      <Button onClick={() => navigate("/home")} className="m-2" variant="light" size="md">
-     Back to Home
-      </Button>
-      <Button onClick={() => navigate("/home")} className="m-2" variant="success" size="md">
-     Pay
-      </Button>
- 
-
-                </Form>
+                </div>
             </div>
 
         );

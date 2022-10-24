@@ -4,48 +4,55 @@
         "name":"Bake Time Marble SLice Cake",
         "price":10,
         "unit":1,
-        "productId":"MBCS_10"
+        "productId":"MBCS_10",
+        "image":"https://grozar.pk/wp-content/uploads/2019/09/Hilal-Bake-Time-Marble-Cake-Slices-5-Slices-Per-Pack.jpg"
     },
     {
         "id":1,
         "name":"Catty Chinns 20gm ",
         "price":30,
         "unit":1,
-        "productId":"CC20GM_30"
+        "productId":"CC20GM_30",
+        "image":"https://supercrisp.com.pk/wp-content/uploads/2021/05/catty-chins-pack.png"
     },
     {
         "id":2,
         "name":"Chocolava ",
         "price":20,
         "unit":1,
-        "productId":"CHLVA_20"
+        "productId":"CHLVA_20",
+        "image":"https://xmart.pk/image/cache/catalog/ARBAZ%20KHAN%20/unnamed-1000x1000.jpg"
     },
     {
         "id":3,
         "name":"Prince Chocolate Biscuit",
         "price":50,
         "unit":1,
-        "productId":"PCB_50"
+        "productId":"PCB_50",
+        "image":"https://pictures.grocerapps.com/original/grocerapp-lu-price-chocolate-biscuit-5f686696201ce.jpeg"
     },
     {
         "id":4,
         "name":"Slanty Jalapeno",
         "price":30,
         "unit":1,
-        "productId":"SLATYJL_30"
+        "productId":"SLATYJL_30",
+        "image":"https://i0.wp.com/fairo.pk/wp-content/uploads/2020/09/Kolson-Slanty-Jalapeno.jpg?fit=1000%2C1000&ssl=1"
     },
     {
         "id":5,
         "name":"Tang Orange",
         "price":30,
         "unit":1,
-        "productId":"TANGORG_30"
+        "productId":"TANGORG_30",
+        "image":"https://media.naheed.pk/catalog/product/cache/49dcd5d85f0fa4d590e132d0368d8132/1/1/1175547-1_1.jpg"
     },
     {
         "id":6,
         "name":"YUMS Fruity",
         "price":30,
         "unit":1,
-        "productId":"YUMS_30"
+        "productId":"YUMS_30",
+        "image":"https://i0.wp.com/fairo.pk/wp-content/uploads/2020/06/CandyLand-Yums-Fruity.jpg?fit=1000%2C1000&ssl=1"
     }
 ]}

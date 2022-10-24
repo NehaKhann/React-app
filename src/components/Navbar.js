@@ -18,7 +18,7 @@ function NavComp() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand >Project Name</Navbar.Brand>
+        <Navbar.Brand >Smart Shopping Cart</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -41,9 +41,9 @@ function NavComp() {
             <Nav.Link eventKey={2} href="/home">
               Home
             </Nav.Link>
-            <Nav.Link eventKey={3} href="/camera">
+            {/* <Nav.Link eventKey={3} href="/camera">
               Cart <FaCartPlus />
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link style={{ "cursor": "pointer" }} onClick={handleLogout}>Logout</Nav.Link>
 
           </Nav>
