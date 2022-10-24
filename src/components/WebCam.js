@@ -4,6 +4,7 @@ import Webcam from "react-webcam";
 import "./WebCam.css"
 import labels from '../model/labels.json'
 import * as cvstfjs from "@microsoft/customvision-tfjs";
+import { Button, Row } from "react-bootstrap";
 
 
 const videoConstraints = {
@@ -85,35 +86,34 @@ const WebcamCapture = () => {
 
           ctx.lineWidth = 3;
           ctx.stroke();
-
-          // console.log("detected");
         }
       }
       setTimeout(() => predictionFunction(), 200);
     }
   }
 
-  React.useEffect(()=>{
-    predictionFunction()
-  },[])
-
   return (
     <>
-      <canvas
-        id="myCanvas"
-        width={videoWidth}
-        height={videoHeight}
-        style={{ backgroundColor: "transparent" }}
-      />
-      <Webcam
-      ref={webcamRef}
-        className="web-camera pt-3"
-        audio={false}
-        id="img"
-        screenshotQuality={1}
-        screenshotFormat="image/jpeg"
-        videoConstraints={videoConstraints}
-      />
+      <Row>
+        <canvas
+          id="myCanvas"
+          width={videoWidth}
+          height={videoHeight}
+          style={{ backgroundColor: "transparent" }}
+        />
+        <Webcam
+          ref={webcamRef}
+          className="web-camera pt-3"
+          audio={false}
+          id="img"
+          screenshotQuality={1}
+          screenshotFormat="image/jpeg"
+          videoConstraints={videoConstraints}
+        />
+      </Row>
+      <Row style = {{justifyContent:'center '}}>
+        <Button style = {{marginTop:20, width :'20%', alignSelf:'center'}} onClick={predictionFunction}>Start Shopping</Button>
+      </Row>
     </>
   );
 }
