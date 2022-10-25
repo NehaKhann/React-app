@@ -1,9 +1,9 @@
 .scrollable-div {
   background-color: #f1f1f1;
-  height: 55%;
+  height: 35.5em;
   width: 90%;
   overflow-y: scroll;
-  text-align: justify;
+  /* text-align: justify; */
   padding: 10px;
 }
 

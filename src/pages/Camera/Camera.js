@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import NavComp from "../../components/Navbar";
 import GridComp from "../../components/Grid";
-
-
-
 import "./Camera.css"
+
+
 const Camera = () => {
     const [authenticated, setauthenticated] = useState(null);
     const [pageLoad, setpageLoad] = useState(true)

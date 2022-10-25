@@ -7,17 +7,19 @@ import { useNavigate } from "react-router-dom";
 
 function CardComp({ name, price, unit, productId, image }) {
   const navigate = useNavigate();
+  console.log("NAME", name, "\n UNIT", unit)
   return (
     // <div className="scrollable-div mt-3">
     //   <Row xs={1} md={2} className="g-2 ">
     //     {Array.from({ length: 6 }).map((_, idx) => (
     <Col>
       <Card>
-        <Card.Img variant="top" src={image} height = {200} width= {170}/>
+        <Card.Img variant="top" src={image} height={200} width={170} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            Price: {price}
+            Price: {price} {'\n'}
+            Quantity: {unit == 1 ? unit : unit - 1}
           </Card.Text>
         </Card.Body>
       </Card>
