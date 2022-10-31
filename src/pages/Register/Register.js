@@ -64,35 +64,44 @@ function Register() {
 
   return (
     <div className="register-form">
-      <Form >
+      <Form style={{ width: '50%', height: '50%' }}>
         <div className="col-md-12 mb-4 text-center">
           <h1>SIGN UP</h1>
         </div>
-        <Form.Group className="mb-3" controlId="formBasicEmail" >
-          <Form.Label>Email Address</Form.Label>
-          <Form.Control className='p-2' type="email" placeholder="Enter email" name="email" defaultValue={inputField.email} onChange={handleChange} />
-          {renderErrorMessage("email")}
-        </Form.Group>
+        <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ width: '40%' }}>
+            <Form.Group className="mb-3" controlId="formBasicEmail" >
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control className='p-2' type="email" placeholder="Enter email" name="email" defaultValue={inputField.email} onChange={handleChange} />
+              {renderErrorMessage("email")}
+            </Form.Group>
+          </div>
+          <div style={{ width: '40%' }}>
 
-        <Form.Group className="mb-3" controlId="formBasicName" >
-          <Form.Label>Username</Form.Label>
-          <Form.Control className='p-2' type="text" placeholder="Enter Name" name="uname" defaultValue={inputField.uname} onChange={handleChange} />
-          {renderErrorMessage("uname")}
-        </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicName" >
+              <Form.Label>Username</Form.Label>
+              <Form.Control className='p-2' type="text" placeholder="Enter Name" name="uname" defaultValue={inputField.uname} onChange={handleChange} />
+              {renderErrorMessage("uname")}
+            </Form.Group>
+          </div>
+          <div style={{ width: '40%' }}>
+            <Form.Group className="mb-3" controlId="formBasicPassword" >
+              <Form.Label>Password</Form.Label>
+              <Form.Control className='p-2' type="password" placeholder="Password" name="pass" defaultValue={inputField.pass} onChange={handleChange} />
+              {renderErrorMessage("pass")}
+            </Form.Group>
+          </div>
+          <div style={{ width: '30%' }}>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword" >
-          <Form.Label>Password</Form.Label>
-          <Form.Control className='p-2' type="password" placeholder="Password" name="pass" defaultValue={inputField.pass} onChange={handleChange} />
-          {renderErrorMessage("pass")}
-        </Form.Group>
-
-        <div className="d-grid gap-2 mb-3">
-          <button type="submit" onClick={handleSubmit} className="btn btn-success" >Register</button>
-        </div>
-        <div className="d-grid gap-2">
-          <Button onClick={() => navigate("/login")} variant="primary" >
-            Login
-          </Button>
+            <div className="d-grid gap-2 mb-3">
+              <button type="submit" onClick={handleSubmit} className="btn btn-success" >Register</button>
+            </div>
+            <div className="d-grid gap-2">
+              <Button onClick={() => navigate("/login")} variant="primary" >
+                Login
+              </Button>
+            </div>
+          </div>
         </div>
       </Form>
     </div>

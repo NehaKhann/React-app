@@ -31,7 +31,8 @@ const WebcamCapture = ({
         />
       </Row>
       <Row style={{ justifyContent: 'center ' }}>
-        {!modelStart && <Button style={{ marginTop: 20, width: '20%', alignSelf: 'center' }} onClick={predictionFunction}>Start Shopping</Button>}
+        {!modelStart && <Button style={{ marginTop: 20, width: '20%', alignSelf: 'center' }} 
+        onClick={predictionFunction}>Start Shopping</Button>}
       </Row>
     </>
   );

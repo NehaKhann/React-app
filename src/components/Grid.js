@@ -39,6 +39,7 @@ function GridComp() {
     //testing azure vision api
     let model = new cvstfjs.ObjectDetectionModel();
     await model.loadModelAsync("model.json");
+    console.log(model.toString())
     setModelStart(true)
 
     const predict = async () => {
@@ -71,7 +72,7 @@ function GridComp() {
         predictedItem = null
       }
 
-      setTimeout(() => predict(), 300)
+      setTimeout(() => predict(), 200)
       return
     }
     predict()
