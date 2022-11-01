@@ -10,9 +10,12 @@ import * as cvstfjs from "@microsoft/customvision-tfjs";
 import labels from '../model/labels.json'
 
 
+//testing azure vision api
+let model = new cvstfjs.ObjectDetectionModel();
+model.loadModelAsync("model.json").then(res=>console.log("MODEL LOAD",res))
+
 function GridComp() {
   const navigate = useNavigate();
-
   const webcamRef = useRef()
   const [cartItems, setCartItems] = useState([])
   const [modelStart, setModelStart] = useState(false)
@@ -36,17 +39,14 @@ function GridComp() {
   }
 
   async function predictionFunction() {
-    //testing azure vision api
-    let model = new cvstfjs.ObjectDetectionModel();
-    await model.loadModelAsync("model.json");
-    console.log(model.toString())
-    setModelStart(true)
+    if (model)
+      setModelStart(true)
 
     const predict = async () => {
       console.log("RUNNING PREDICTION")
       const predictions = await model.executeAsync(
         document.getElementById("img")
-      );
+      )
       let detected_boxes, detected_scores, detected_classes;
       [detected_boxes, detected_scores, detected_classes] = predictions;
       let itemDetected = false
@@ -54,7 +54,7 @@ function GridComp() {
       if (predictions[0].length > 0) {
         for (let n = 0; n < predictions[0].length; n++) {
           // Check scores
-          if (predictions[1][n] > 0.4) {
+          if (predictions[1][n] > 0.5) {
             let detectedArray = detected_boxes.map((box, i) => ({
               Label: detected_classes[i],
               prob: detected_scores[i].toFixed(2)
